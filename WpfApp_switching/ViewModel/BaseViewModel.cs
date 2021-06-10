@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WpfApp_switching.Model;
 
 namespace WpfApp_switching.ViewModel
@@ -53,10 +49,6 @@ namespace WpfApp_switching.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /**
-         * @brief Simple function to trigger event handler
-         * @params propertyName Name of ViewModel property as string
-         */
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

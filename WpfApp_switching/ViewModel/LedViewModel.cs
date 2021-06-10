@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
-using WpfApp_switching.Model;
 
 namespace WpfApp_switching.ViewModel
 {
@@ -102,10 +95,8 @@ namespace WpfApp_switching.ViewModel
                 }
             }
         }
-        //Action<String, Color> handler
         public LedViewModel()
         {
-            //setColorHandler = handler;
             ipAddress = config.IpAddress;
 
             CommonButtonCommand = new ButtonCommandWithParameters(SetButtonColor);

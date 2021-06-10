@@ -1,10 +1,6 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WpfApp_switching.ViewModel;
 
 
@@ -36,10 +32,6 @@ namespace WpfApp_switching.Model
                 SampleTime = config_data[0].SampleTime_data;
 
             }
-
-
-            //IpAddress = ipAddressDefault;
-            //SampleTime = sampleTimeDefault;
         }
 
         public Configure(string ip, int st)

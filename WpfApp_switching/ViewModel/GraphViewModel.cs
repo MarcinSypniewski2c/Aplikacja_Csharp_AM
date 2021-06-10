@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
@@ -73,7 +72,6 @@ namespace WpfApp_switching.ViewModel
             {
                 disTim = new System.Windows.Threading.DispatcherTimer();
                 disTim.Tick += disTim_tick;
-                //disTim.Interval = new TimeSpan(0, 0, 1);
                 double std = Convert.ToDouble(config.SampleTime);
                 TimeSpan st_ms = TimeSpan.FromMilliseconds(std);
                 disTim.Interval = st_ms;
