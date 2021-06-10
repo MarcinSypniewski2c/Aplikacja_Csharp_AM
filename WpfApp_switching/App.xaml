@@ -1,0 +1,19 @@
+﻿<Application x:Class="WpfApp_switching.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp_switching"
+             xmlns:view="clr-namespace:WpfApp_switching.View"
+             xmlns:viewmodel="clr-namespace:WpfApp_switching.ViewModel"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:GraphViewModel}">
+            <view:GraphView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:LedViewModel}">
+            <view:LedView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:ListViewModel}">
+            <view:ListView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

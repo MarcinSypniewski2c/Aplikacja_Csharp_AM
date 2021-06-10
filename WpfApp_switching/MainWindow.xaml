@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp_switching.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_switching"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl Content="{Binding SelectedViewModel}"/>
+
+        <StackPanel Width="800" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Background="CornflowerBlue">
+            <Button Margin="235,10,0,10" Width="100" Content="Graph" Command="{Binding UpdateViewCommand}" CommandParameter="Graph"/>
+            <Button Margin="10" Width="100" Content="LED" Command="{Binding UpdateViewCommand}" CommandParameter="Led"/>
+            <Button Margin="0,10,235,10" Width="100" Content="List" Command="{Binding UpdateViewCommand}" CommandParameter="List"/>
+        </StackPanel>
+    </Grid>
+</Window>

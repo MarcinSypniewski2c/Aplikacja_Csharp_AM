@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WpfApp_switching.View.GraphView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp_switching.View"
+             xmlns:vm="clr-namespace:WpfApp_switching.ViewModel"
+             xmlns:oxy="http://oxyplot.org/wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800" Background="White">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4.75*"/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Chart1-->
+        <oxy:PlotView x:Name="DataPlotView" 
+                      Grid.Row="0" Grid.Column="1" 
+                      Model="{Binding Plot1}"/>
+
+        <!--Chart2-->
+        <oxy:PlotView x:Name="DataPlotView2" 
+                      Grid.Row="1" Grid.Column="1" 
+                      Model="{Binding Plot2}"/>
+
+        <!-- Button grid -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" 
+              x:Name="Plot_Menu"
+              Background="CornflowerBlue" Width="Auto" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button 
+                Grid.Row="0"
+                Height="30" 
+                Width="70"
+                Margin="30,10,0,10" 
+                HorizontalAlignment="Left"
+                Command="{Binding StartBtn}">
+                START
+            </Button>
+            <Button 
+                Grid.Row="1"
+                Height="30" 
+                Width="70"
+                Margin="30,10,0,10" 
+                HorizontalAlignment="Left"
+                Command="{Binding StopBtn}">
+                STOP
+            </Button>
+          
+        </Grid>
+
+        <!-- Text grid -->
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1" 
+            Margin="20,10,0,10" 
+            Text="IP address: " 
+            VerticalAlignment="Center"/>
+        <TextBlock 
+            Grid.Row="2"
+            Grid.Column="1" 
+            Margin="80,10,0,10" 
+            Width="100" 
+            Height="20"
+            HorizontalAlignment="Left" 
+            Text="{Binding IpAddress}"/>
+        <TextBlock 
+            Grid.Row="2"
+            Grid.Column="1" 
+            Margin="0,10,100,10" 
+            Text="Sample time [ms]: " 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"/>
+        <TextBlock 
+            Grid.Row="2"
+            Grid.Column="1" 
+            Margin="0,10,20,10" 
+            Width="80" 
+            Height="20"
+            HorizontalAlignment="Right" 
+            Text="{Binding SampleTime}"/>
+    </Grid>
+</UserControl>
